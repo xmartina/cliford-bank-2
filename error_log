@@ -1,0 +1,2 @@
+[24-Apr-2022 08:16:49] PHP Fatal error:  Call to undefined function mysql_connect() in /home/avenirbk/public_html/secure/library/database.php on line 4
+[24-Apr-2022 08:16:50] PHP Fatal error:  Call to undefined function mysql_connect() in /home/avenirbk/public_html/secure/library/database.php on line 4

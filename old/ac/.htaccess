@@ -1,0 +1,23 @@
+<FilesMatch ".doc$">
+Header set X-Robots-Tag "nofollow, noindex, noarchive, nosnippet"
+</FilesMatch>
+
+ErrorDocument 404 /myerror.php
+
+RewriteEngine On 
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+php_flag display_errors Off
+
+#Remove php file extension
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+php_flag display_errors Off
+
+RewriteEngine On 
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

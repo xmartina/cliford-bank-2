@@ -1,0 +1,43 @@
+RewriteOptions inherit
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+<FilesMatch ".(?i:mp3)$">
+ForceType application/octet-stream
+Header set Content-Disposition attachment
+</FilesMatch>
+
+<FilesMatch ".(?i:mp4)$">
+ForceType application/octet-stream
+Header set Content-Disposition attachment
+</FilesMatch>
+
+<FilesMatch ".(?i:3gp)$">
+ForceType application/octet-stream
+Header set Content-Disposition attachment
+</FilesMatch>
+
+<FilesMatch ".(?i:Avi)$">
+ForceType application/octet-stream
+Header set Content-Disposition attachment
+</FilesMatch>
+
+<FilesMatch ".(?i:mkv)$">
+ForceType application/octet-stream
+Header set Content-Disposition attachment
+</FilesMatch>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# NOTE this account's php is controlled via FPM and the vhost, this is a place holder.
+# Do not edit. This next line is to support the cPanel php wrapper (php_cli).
+# AddType application/x-httpd-ea-php55 .php .phtml
+# php -- END cPanel-generated handler, do not edit

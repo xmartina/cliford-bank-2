@@ -1,0 +1,4 @@
+lsapi_phpini /home/crypahds/public_html/php.ini
+<FilesMatch ".(?:html|php)$">
+SetHandler application/x-httpd-alt-php52
+</FilesMatch>
